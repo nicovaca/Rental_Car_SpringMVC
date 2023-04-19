@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <!-- Layout base -->
+    <definition name="baseLayout" template="/WEB-INF/layouts/template/base.jsp">
+        <put-attribute name="titolo" value=""/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/template/footer.jsp"/>
+    </definition>
+
+    <!-- pagina di index -->
+    <definition name="index" extends="baseLayout">
+        <put-attribute name="titolo" value="Homepage"/>
+        <put-attribute name="content" value="/WEB-INF/view/welcome.jsp"/>
+    </definition>
+
+    <!-- pagina Lista veicoli -->
+    <definition name="veicoli" extends="baseLayout">
+        <put-attribute name="titolo" value="Parco Auto"/>
+        <put-attribute name="content" value="/WEB-INF/view/veicoli.jsp"/>
+    </definition>
+
+    <!-- pagina Login -->
+    <definition name="login" extends="loginBaseLayout">
+        <put-attribute name="titolo" value="Login Utente"/>
+        <put-attribute name="content" value="/WEB-INF/view/login.jsp"/>
+    </definition>
+
+    <!-- pagina Inserimento-Modifica veicolo -->
+    <definition name="insmodveicolo" extends="baseLayout">
+        <put-attribute name="titolo" value="Dettagli Veicolo"/>
+        <put-attribute name="content" value="/WEB-INF/view/Veicolo/insmodveicolo.jsp"/>
+    </definition>
+
+
+    <!-- Layout base Admin -->
+    <definition name="adminBaseLayout" template="/WEB-INF/layouts/template/adminBase.jsp">
+        <put-attribute name="titolo" value=""/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/template/footer.jsp"/>
+    </definition>
+
+    <!-- Layout base Customer -->
+    <definition name="customerBaseLayout" template="/WEB-INF/layouts/template/customerBase.jsp">
+        <put-attribute name="titolo" value=""/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/template/footer.jsp"/>
+    </definition>
+
+
+    <!-- Homepage Admin -->
+    <definition name="profiloAdmin" extends="adminBaseLayout">
+        <put-attribute name="titolo" value="Profilo Admin"/>
+        <put-attribute name="content" value="/WEB-INF/view/Utente/profiloAdmin.jsp"/>
+    </definition>
+
+    <!-- Pagina form inserimento nuovo Utente -->
+    <definition name="insmodUtente" extends="baseLayout">
+        <put-attribute name="titolo" value="Dettaglio Utente"/>
+        <put-attribute name="content" value="/WEB-INF/view/Utente/insmodUtente.jsp"/>
+    </definition>
+
+    <!-- Pagina AllPrenotazioni -->
+    <definition name="allPrenotazioni" extends="adminBaseLayout">
+        <put-attribute name="titolo" value="Dettaglio Prenotazioni"/>
+        <put-attribute name="content" value="/WEB-INF/view/Prenotazione/prenotazioni.jsp"/>
+    </definition>
+
+    <!-- Pagina Registrazione -->
+    <definition name="registrazioneUtente" extends="baseLayout">
+        <put-attribute name="titolo" value="Registrazione"/>
+        <put-attribute name="content" value="/WEB-INF/view/Utente/registrazione.jsp"/>
+    </definition>
+
+    <!-- Pagina nuova prenotazione -->
+    <definition name="insmodPrenotazione" extends="customerBaseLayout">
+        <put-attribute name="titolo" value="Nuova Prenotazione"/>
+        <put-attribute name="content" value="/WEB-INF/view/Prenotazione/formPrenotazione.jsp"/>
+    </definition>
+
+    <!--Homepage Customer -->
+    <definition name="profiloCustomer" extends="customerBaseLayout">
+        <put-attribute name="titolo" value="Profilo Customer"/>
+        <put-attribute name="content" value="/WEB-INF/view/Utente/profiloCustomer.jsp"/>
+    </definition>
+
+    <!-- exception idVeicolo -->
+    <definition name="idVeicoloException" extends="baseLayout">
+        <put-attribute name="titolo" value="Veicolo non trovato"/>
+        <put-attribute name="content" value="/WEB-INF/view/Veicolo/idVeicoloException.jsp"/>
+    </definition>
+
+    <!-- exception idUtente -->
+    <definition name="idUtenteException" extends="adminBaseLayout">
+        <put-attribute name="titolo" value="Utente non trovato"/>
+        <put-attribute name="content" value="/WEB-INF/view/Utente/idUtenteException.jsp"/>
+    </definition>
+
+    <!--Layout base LOGIN-->
+    <definition name="loginBaseLayout" template="/WEB-INF/layouts/template/loginBase.jsp">
+        <put-attribute name="titolo" value=""/>
+        <put-attribute name="content" value=""/>
+        <put-attribute name="footer" value="/WEB-INF/layouts/template/footer.jsp"/>
+    </definition>
+
+    <!--Pagina errore Prenotazioni (data inizio)-->
+    <definition name="prenotazioniErrorDate" extends="baseLayout">
+        <put-attribute name="titolo" value="Cancellazione non valida"/>
+        <put-attribute name="content" value="/WEB-INF/view/Prenotazione/prenotazioniErrorDate.jsp"/>
+    </definition>
+
+    <!--Pagina dettagli Utente Customer -->
+    <definition name="dettagliCustomer" extends="customerBaseLayout">
+        <put-attribute name="titolo" value="Dettagli Utente"/>
+        <put-attribute name="content" value="/WEB-INF/view/Utente/dettagliCustomer.jsp"/>
+    </definition>
+
+</tiles-definitions>
